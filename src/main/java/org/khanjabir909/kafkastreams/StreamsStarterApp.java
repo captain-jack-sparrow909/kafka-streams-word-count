@@ -46,5 +46,14 @@ public class StreamsStarterApp {
 
         // Start the streams application
         streams.start();
+
+        //print the topology
+        System.out.println(streams.toString());
+
+        // Add a shutdown hook to gracefully close the streams application
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            System.out.println("Closing the streams application...");
+            streams.close();
+        }));
     }
 }
