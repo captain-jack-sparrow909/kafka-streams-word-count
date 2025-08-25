@@ -28,7 +28,7 @@ public class StreamsStarterApp {
         KStream wordCountInput = builder.stream("word-count-input");
 
         // Process the stream
-        // Convert all words to lowercase -
+        // Convert all words to lowercase
         KTable<String, Long> wordCounts = wordCountInput.mapValues(value -> ((String) value).toLowerCase())
                 //split the value into individual words and then apply flatMapValues
                 .flatMapValues(value -> Arrays.asList(((String) value).split("\\W+")))
