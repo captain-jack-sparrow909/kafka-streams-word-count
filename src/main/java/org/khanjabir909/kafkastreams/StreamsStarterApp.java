@@ -38,7 +38,7 @@ public class StreamsStarterApp {
                 .groupByKey() //it returns GroupedKStream
                 //count the occurrences of each word
                 .count();  //it returns KTable<String, Long>
-        // Write the results to a new topic -
+        // Write the results to a new topic
         wordCounts.toStream().to("word-count-output", Produced.with(Serdes.String(), Serdes.Long()));
 
         // Build the topology
