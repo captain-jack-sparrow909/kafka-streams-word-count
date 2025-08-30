@@ -55,5 +55,6 @@ public class StreamsStarterApp {
             System.out.println("Closing the streams application...");
             streams.close();
         }));
+        //
     }
 }
