@@ -53,7 +53,7 @@ public class StreamsStarterApp {
         // Add a shutdown hook to gracefully close the streams application
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             System.out.println("Closing the streams application...");
-            streams.close()
+            streams.close();
         }));
     }
 }
